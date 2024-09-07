@@ -2,8 +2,16 @@ terraform {
   required_providers {
     yandex = {
       source  = "yandex-cloud/yandex"
-      version = "=> 0.128"
+      version = ">= 0.128"
     }
   }
   required_version = ">= 1.9.5"
 }
+
+/*
+# this won't work with 'count' in the calling module
+# and is a bad practice
+provider "yandex" {
+  zone = "ru-central1-d"
+}
+*/
